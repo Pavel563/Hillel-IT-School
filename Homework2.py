@@ -39,16 +39,16 @@ else:
 mounth = input("Введите месяц: ")
 
 if mounth == "Январь" or mounth == "Март" or  mounth == "Май" or mounth == "Июль" or mounth == "Август" or mounth == "Октябрь" or mounth == "Декабрь":
-    print(f"В месяце: {mounth} Количество дней: {31}")
+    print(f"В месяце: {mounth.capitalize()} Количество дней: {31}")
 elif mounth  == "Апрель" or mounth == "Июнь" or mounth == "Сентябрь" or mounth == "Ноябрь":
-    print(f"В месяце: {mounth} Количество дней: {30}")
+    print(f"В месяце: {mounth.capitalize()} Количество дней: {30}")
 elif mounth == "Февраль":
-    print(f"В месяце: {mounth} Количество дней: {28}")
+    print(f"В месяце: {mounth.capitalize()} Количество дней: {28}")
 elif mounth == "январь" or mounth == "март" or  mounth == "май" or mounth == "июль" or mounth == "август" or mounth == "октябрь" or mounth == "декабрь":
-    print(f"В месяце: {mounth} Количество дней: {31}")
+    print(f"В месяце: {mounth.capitalize()} Количество дней: {31}")
 elif mounth  == "апрель" or mounth == "июнь" or mounth == "сентябрь" or mounth == "ноябрь":
-    print(f"В месяце: {mounth} Количество дней: {30}")
+    print(f"В месяце: {mounth.capitalize()} Количество дней: {30}")
 elif mounth == "февраль":
-    print(f"В месяце: {mounth} Количество дней: {28}")
+    print(f"В месяце: {mounth.capitalize()} Количество дней: {28}")
 else:
     print("Нет такого месяца!")
