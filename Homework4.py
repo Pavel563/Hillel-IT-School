@@ -93,15 +93,14 @@ for index in my_indexes:
 # (1, 2)
 # (3, 4)
 
-my_indexes = [0, 1]
-my_list_1 = [1, 3]
-my_list_2 = [2, 4]
-my_result_1 = []
-my_result_2 = []
-my_result_1.append(my_list_1[0]), my_result_1.append(my_list_2[0])
-my_result_2.append(my_list_1[1]), my_result_2.append(my_list_2[1])
-print(f"First couple: {my_result_1}")
-print(f"Second couple: {my_result_2}")
+
+my_list_1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+my_list_2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for index in range(len(my_list_1)):
+    my_result = []
+    my_result.append(my_list_1[index])
+    my_result.append(my_list_2[index])
+    print(my_result)
 
 
 ########################################################################################################################
