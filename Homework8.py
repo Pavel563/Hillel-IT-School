@@ -5,7 +5,7 @@ import random
 # Названия интернет доменов поместить в список (названия сохранить без точки).
 
 
-with open("domains.txt", 'rt', encoding="utf-8") as domains_file:
+with open("domains.txt", 'r', encoding="utf-8") as domains_file:
     domains = []
     for line in domains_file.readlines():
         line = line.replace('.', '')
