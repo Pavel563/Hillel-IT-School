@@ -39,13 +39,13 @@ print('----------------------------------------------')
 # 3. Написать функцию сортировки по дате смерти из поля "years".
 # Обратите внимание на сокращение BC. - это означает до н.э.
 
-def key_sorted_by_age(obj_dict):
+def key_sorted_by_death_date(obj_dict):
     years = re.findall(r'[0-9]+', obj_dict["years"])
     d_date = -int(years[-1]) if "BC" in obj_dict["years"] else int(years[-1])
     return d_date
 
 
-data_sorted_by_death_date = sorted(data, key=key_sorted_by_age)
+data_sorted_by_death_date = sorted(data, key=key_sorted_by_death_date)
 print(data_sorted_by_death_date)
 
 print('----------------------------------------------')
