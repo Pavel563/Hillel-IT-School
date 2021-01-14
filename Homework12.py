@@ -87,14 +87,11 @@ import re
 def make_dict():
     authors_dict_list = []
     for text in authors:
-
-        author_dict = {"name": "", "date": ""}
-        # name = re.findall(r"[a-zA-Z]+[']", text)
+        name = re.findall(r"[a-zA-Z. ]+[']", text)
+        name = [i.strip(' \'') for i in name]
+        name = "".join(name)
         numbers = re.findall(r'[0-9]+', text)
-        if len(numbers[0]) < 2:
-            dd = '0' + numbers[0]
-        else:
-            dd = numbers[0]
+        dd = numbers[0] if len(numbers[0]) > 1 else '0' + numbers[0]
         if 'January' in text:
             mm = '01'
         elif 'February' in text:
@@ -120,22 +117,8 @@ def make_dict():
         elif 'December' in text:
             mm = '12'
         yyyy = numbers[-1]
-        # dash_index = text.index("-")
-        # apostrophe_index = text.index("")
-        # find_name = r"\-\ \w+\ \w+\'s"
-        # type_name = re.findall(find_name, text)
-        # type_name = str(type_name)
-
-        author_dict["name"] = text[text.index("-") + 2:text.index("'") - 1]
-        author_dict["date"] = f"{dd}/{mm}/{yyyy}"
-
-        # words_list = []
-        # last_name = ''
-        # words_list.append(text.split(' '))
-        # for word in words_list:
-        #     if "'" in word:
-        #         last_name = ''.join(word[:word.index("'")])
-        # author_dict["name"] = text[text.index('-') + 2:text.index(last_name) + len(last_name)]
+        date = f"{dd}/{mm}/{yyyy}"
+        author_dict = {"name": name, "date": date}
         authors_dict_list.append(author_dict)
     return authors_dict_list
 
