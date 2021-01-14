@@ -66,10 +66,8 @@ def read_txt_file(filename):
     with open(filename, "r") as txt_file:
         data = []
         for line in txt_file.readlines():
-            if "birthday" in line:
-                data.append(line.strip())
-            if "death" in line:
-                data.append(line.strip())
+            if line.find("'s") >= 0 and (line.find("birthday") >= 0 or line.find("death") >= 0):
+                data.append(line)
     return data
 
 
@@ -128,7 +126,7 @@ def make_dict():
         # type_name = re.findall(find_name, text)
         # type_name = str(type_name)
 
-        author_dict["name"] = text[text.index("-"):text.index("'")]
+        author_dict["name"] = text[text.index("-") + 2:text.index("'") - 1]
         author_dict["date"] = f"{dd}/{mm}/{yyyy}"
 
         # words_list = []
@@ -145,4 +143,4 @@ def make_dict():
 authors_list = make_dict()
 print(authors_list)
 
-    # 2.3) Написать функцию, которая сохраняет результат пункта 2.2 в json файл.
+# 2.3) Написать функцию, которая сохраняет результат пункта 2.2 в json файл.
