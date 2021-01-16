@@ -122,9 +122,9 @@ def make_dict(authors):
 # 2.3) Написать функцию, которая сохраняет результат пункта 2.2 в json файл.
 
 
-def write_authors_json(filename="authors.json"):
+def write_authors_json(filename, authors):
     with open(filename, "w") as json_file:
         json.dump(make_dict(authors), json_file, indent=2)
 
 
-write_authors_json()
+write_authors_json("authors.json", authors)
