@@ -47,7 +47,7 @@ def key_sorted_by_name(quote):
 quotes = sorted(quotes, key=key_sorted_by_name)
 
 
-def write_quotes_csv(filename="quotes.csv"):
+def write_quotes_csv(filename, quotes):
     with open(filename, "w", encoding="utf-8") as csv_file:
         fieldnames = {"Author": "", "Quote": "", "URL": ""}
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames, delimiter=',')
@@ -55,7 +55,7 @@ def write_quotes_csv(filename="quotes.csv"):
         writer.writerows(quotes)
 
 
-write_quotes_csv()
+write_quotes_csv("quotes.csv", quotes)
 
 
 ########################################################################################################################
